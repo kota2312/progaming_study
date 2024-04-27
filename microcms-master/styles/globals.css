@@ -17,3 +17,16 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/* 見出し */
+h2.heading-primary {
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  color: #333;
+}
+
+.title__heading {
+  padding: 30px 0px;
+}

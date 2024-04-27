@@ -30,6 +30,9 @@ export default function Home({ blogs }) {
       </div> */}
       <Header />
       <div className="sec01">
+        <div class="title__heading">
+              <h2 class="heading-primary">BLOGS</h2>
+        </div>
         <ul className="blog-items">
           {blogs.map((blogs) => (
             <BlogCard 
