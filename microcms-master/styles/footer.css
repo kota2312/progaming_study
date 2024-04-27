@@ -1,0 +1,176 @@
+/* footer ウィジェット */
+footer {
+    color: #333;
+    padding: 55px 0;
+    /* margin-top: 70px; */
+}
+
+.l-inner1 {
+    max-width: 1360px;
+    padding-right: 60px;
+    /* padding-left: 35px; */
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 60px;
+}
+
+.f-main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.f-logo {
+    width: 200px;
+    display: block;
+}
+
+.f-nav {
+    font-size: 14px;
+    line-height: 1;
+    display: flex;
+}
+
+.f-nav > ul {
+    position: relative;
+}
+
+.f-nav > ul > li {
+    padding-left: 1.5em;
+}
+
+.f-nav > ul > li > a {
+    line-height: 1.8;
+    color: #333;
+}
+
+.u-flex {
+    display: -webkit-box !important;
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    gap: 1rem;
+}
+
+.c-btn4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1;
+    width: 140px;
+    height: 40px;
+    color: #333 !important;
+    border: solid 1px #333;
+}
+
+.u-flex.u-mt40px.u-mt2em--sp {
+    margin-top: 30px;
+}
+
+.f-nav > ul > li.instagram, .f-nav > ul > li.twitter {
+    position: absolute;
+    bottom: 0;
+}
+
+li.twitter > a::before {
+    content: '\e61b';
+    font-family: 'Font Awesome 6 Brands';
+    font-weight: 400;
+    color: #333;
+}
+  
+li.instagram > a::before {
+    content: '\f16d';
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+    color: #333;
+}
+  
+.sns-icon > ul {
+    display: flex;
+    justify-content: right;
+    max-width: 1360px;
+    padding-right: 80px;
+    padding-left: 80px;
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 1000px) {
+    .footer {
+        padding-top: 25px;
+    }
+    .f-footer {
+        padding: 8vw 0 14.6666666667vw;
+    }
+    .f-main {
+        display: block;
+        font-size: 16px;
+        padding: 30px 0px;
+    }
+    .f-nav {
+        display: block;
+        font-size: 16px;
+        margin-top: 3em;
+    }
+    .f-nav > ul, .f-nav > ul > li {
+        padding-left: 0 !important;
+    }
+    .f-nav > ul {
+        border-bottom: solid 1px #fff;
+        padding-bottom: 10px;
+    }
+    
+    .f-nav > * > * {
+        margin-left: 0;
+        display: flex;
+        /* border-bottom: solid 1px #fff; */
+        margin-top: 1.7em;
+    }
+    .f-logo {
+        width: 41.6vw;
+    }
+
+    .c-btn4 {
+        width: 100%;
+        height: 12vw;
+        font-size: 16px;
+    }
+
+    .sns-icon > ul {
+        padding: 20px !important;
+    }
+}
+
+.l-container.w-footer.-col1 {}
+
+footer#footer {
+    background: #333;
+}
+
+.l-footer .copyright {
+	color: #333;
+}
+
+@media screen and (max-width:480px) {
+    .cta-wrap {
+        flex-direction: column;
+    }
+    
+    .cta-left-wrap {
+        width: 100%;
+    }
+    
+    .cta-left-wrap > h4 {
+        font-size: 24px;
+    }
+    
+    .cta-left-wrap > .description-tx > p {
+        font-size: 18px;
+    }
+}
