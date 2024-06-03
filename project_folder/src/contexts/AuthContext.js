@@ -1,39 +1,38 @@
 import React, { useContext, useState, useEffect } from "react";
 import { auth } from "../firebase";
+import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 
 const AuthContext = React.createContext();
 
 export function useAuth() {
-    return useContext(AuthContext);
+  return useContext(AuthContext);
 }
 
 export function AuthProvider({ children }) {
-    const [currentUser, setCurrentUser] = useState();
-    const [loading, setLoading] = useState(true);
+  const [currentUser, setCurrentUser] = useState();
+  const [loading, setLoading] = useState(true);
 
-    function signup(email, password) {console.log(email, password);
-        return auth.createUserWithEmailAndPassword(email, password);
-    }
+  function signup(email, password) {
+    return createUserWithEmailAndPassword(auth, email, password);
+  }
 
-    const value = {
-        currentUser,
-        signup
-    };
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, user => {
+      setCurrentUser(user);
+      setLoading(false);
+    });
 
-    useEffect(() => {console.log(value);
-        // Firebase Authのメソッド。ログイン状態が変化すると呼び出される
-        const unsubscribe = auth.onAuthStateChanged(user => {
-            setCurrentUser(user);
-            setLoading(false);
-        });
+    return unsubscribe;
+  }, []);
 
-        // コンポーネントのクリーンアップ時にサブスクリプションを解除
-        return unsubscribe;
-    }, []);
+  const value = {
+    currentUser,
+    signup
+  };
 
-    return (
-        <AuthContext.Provider value={value}>
-            {!loading && children}
-        </AuthContext.Provider>
-    );
+  return (
+    <AuthContext.Provider value={value}>
+      {!loading && children}
+    </AuthContext.Provider>
+  );
 }

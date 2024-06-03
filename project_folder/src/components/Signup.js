@@ -195,7 +195,7 @@ const Signup = () => {
    */
   const handleKeyPress = (event) => {
     if (event.keyCode === 13 || event.which === 13) {
-      state.isButtonDisabled || handleSignup();
+      state.isButtonDisabled || handleSignup(event);
     }
   };
 
@@ -231,7 +231,7 @@ const Signup = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <form className={classes.container} noValidate autoComplete="off">
+      <form className={classes.container} noValidate autoComplete="off" onSubmit={handleSignup}>
         <Card className={classes.card}>
           <CardHeader className={classes.header} title="Sign UP " />
           <CardContent>
@@ -282,7 +282,7 @@ const Signup = () => {
               size="large"
               color="secondary"
               className={classes.signupBtn}
-              onClick={handleSignup}
+              type="submit"
               disabled={state.isButtonDisabled}
             >
               Signup
